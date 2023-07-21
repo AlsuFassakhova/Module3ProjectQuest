@@ -31,7 +31,7 @@
     <p>Если выпадет от 7 до 12, вы выиграли</p>
     <div class="control-group">
       <div class="controls">
-        <button name="dice"  class="btn btn-warning"
+        <button name="dice" value="0" class="btn btn-warning"
         >Бросить кубик
         </button>
       </div>
