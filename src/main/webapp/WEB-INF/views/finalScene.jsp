@@ -7,18 +7,33 @@
     <title>Конец квеста</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>
+        body {
+            margin-top: 100px;
+            font-family: george;
+            text-align: center; /* Выравнивание по ширине */
+            line-height: 1.0;
+            color: black;
+
+        }
+
+        p {
+            font-size: 130%;
+        }
+      </style>
 </head>
 <body>
 <form action="restart" method="post">
+    <br>
     <c:choose>
     <c:when test="${choice == '3'}">
-    <p>Ответ верный.</p>
+    <p>Вы ответили верно!</p>
     <p>Ни одного. Это аппаратная проблема, программисты их не решают.</p>
     <p>Вы сводобны.</p>
     <br>
     </c:when>
     <c:when test="${choice == '4'}">
-    <p>Вы ответили неверно.</p>
+    <p>Вы ответили неверно!</p>
     <p>Ваша судьба заканчивается здесь.</p>
     <p>Попробуйте еще раз!</p>
     <br>
@@ -49,10 +64,10 @@
     <form action="restart" method="post">
         <div class="control-group">
             <div class="controls">
-                <button name="choice" value="11" class="btn btn-success"
+                <button name="choice" value="11" class="btn btn-warning"
                 >Попробовать еще раз
                 </button>
-                <button name="choice" value="12" class="btn btn-primary"
+                <button name="choice" value="12" class="btn btn-danger"
                 >Начать новую игру
                 </button>
             </div>

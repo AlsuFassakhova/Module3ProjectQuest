@@ -1,6 +1,7 @@
 package org.javarush.module3projectquest.servlets;
 
 import lombok.extern.slf4j.Slf4j;
+import org.javarush.module3projectquest.services.PlayerService;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,6 +17,12 @@ public class RestartServlet extends HttpServlet {
         if (req.getParameter("choice").equals("11")) {
             resp.sendRedirect("gameStart");
             log.info("Game restarted");
-        } else resp.sendRedirect("index.jsp");
+        } else
+        {
+            req.getSession().invalidate();
+            log.info("Session invalidate");
+            new PlayerService().getInstance().setGamesPlayed(0);
+            resp.sendRedirect("index.jsp");
+        }
     }
 }
