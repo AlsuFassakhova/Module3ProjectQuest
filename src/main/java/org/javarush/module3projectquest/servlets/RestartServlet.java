@@ -12,10 +12,10 @@ import java.io.IOException;
 @WebServlet(name = "RestartServlet", value = "/restart")
 public class RestartServlet extends HttpServlet {
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         if (req.getParameter("choice").equals("11")) {
             resp.sendRedirect("gameStart");
             log.info("Game restarted");
-        } else  resp.sendRedirect("index.jsp");
+        } else resp.sendRedirect("index.jsp");
     }
 }
